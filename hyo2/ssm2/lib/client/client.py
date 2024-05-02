@@ -96,7 +96,7 @@ class Client:
         if self.protocol == "HYPACK":
             tx_data = calc.convert(prj.ssp)
         elif self.protocol == "EA440":
-            tx_data = calc.convert(prj.ssp).replace("\r\n", "\n").replace("\n", "\r\n")
+            tx_data = calc.convert(prj.ssp).replace("\n", "\r\n")
         return self._transmit(tx_data)
 
     def _transmit(self, tx_data: Union[bytes, str]) -> bool:
